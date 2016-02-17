@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/gopherjs/gopherjs/js"
 	"github.com/robertkrimen/otto"
 )
 
@@ -18,6 +19,7 @@ func main() {
 
 	err := func() error {
 		vm := otto.New()
+		vm.Set("document", js.Global.Get("document"))
 		_, err := vm.Run(src)
 		return err
 	}()
