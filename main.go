@@ -8,7 +8,10 @@ import (
 	"github.com/robertkrimen/otto"
 )
 
-const src = `console.log("Hello, Otto!")`
+const src = `
+var div = document.createElement('div');
+div.textContent = 'Hello, Otto!';
+document.body.appendChild(div);`
 
 func main() {
 	flag.Parse()
