@@ -24,5 +24,5 @@ func main() {
 		return
 	}
 	ans := js.Global.Get("document").Call("getElementById", "answer")
-	ans.Set("textContent", result)
+	ans.Set("textContent", result.String())
 }
