@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 
 	"github.com/gopherjs/gopherjs/js"
 	"github.com/robertkrimen/otto"
@@ -18,9 +17,9 @@ func main() {
 	if err != nil {
 		switch err := err.(type) {
 		case *otto.Error:
-			fmt.Print(err.String())
+			print(err.String())
 		default:
-			fmt.Println(err)
+			print(err)
 		}
 		return
 	}
